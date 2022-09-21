@@ -5,6 +5,7 @@
         <attribute name="make" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="model" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="timestamp" optional="YES" attributeType="Date" defaultDateTimeInterval="685466880" usesScalarValueType="NO"/>
+        <attribute name="vin" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="year" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
 </model>

@@ -21,9 +21,12 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        CarDetails(year: item.year!,
+                                   make: item.make!,
+                                   model: item.model!,
+                                   vin: item.vin!)
                     } label: {
-                        Text(item.make!)
+                        Text("\(item.year!) \(item.make!) \(item.model!)")
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -40,13 +43,14 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        .navigationTitle("Vin Is Diesel?")
     }
 
     private func addItem() {
         withAnimation {
             let newItem = Car(context: viewContext)
             newItem.timestamp = Date()
-            newItem.make = "Foo"
+            newItem.make = "New Vehicle"
             
             do {
                 try viewContext.save()

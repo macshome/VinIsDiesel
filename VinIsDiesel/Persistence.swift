@@ -16,6 +16,7 @@ struct PersistenceController {
         for _ in 0..<10 {
             let newItem = Car(context: viewContext)
             newItem.timestamp = Date()
+            newItem.make = "Doggo"
 
         }
         do {

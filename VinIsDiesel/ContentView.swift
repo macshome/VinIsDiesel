@@ -18,55 +18,46 @@ struct ContentView: View {
         animation: .default)
 
     private var items: FetchedResults<Car>
-    @State var year = ""
-    @State var make = ""
-    @State var model = ""
-    @State var vin = ""
+    @State var isPresented = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Form {
-                            TextField("VIN", text: $vin)
-                                .onSubmit {
-                                    Task {
-                                    await vinLookup(vin)
-                                    }
-                                }
-                            TextField("Year", text: $year)
-                                .disabled(true)
-                            TextField("Make", text: $make)
-                                .disabled(true)
-                            TextField("Model", text: $model)
-                                .disabled(true)
-                        }
-                    } label: {
-                            Text("\(item.year!) \(item.make!) \(item.model!)")
-                    }
+                ForEach(items, id: \.make) {
+                    CarRow(car: $0)
                 }
                 .onDelete(perform: deleteItems)
+            }
+            .sheet(isPresented: $isPresented) {
+                CarDetails { year, make, model, fuel in
+                    self.addItem(year: year, model: model, make: make, fuel: fuel)
+                    self.isPresented = false
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: { self.isPresented.toggle() }) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
             }
+            .navigationTitle("VIN is Diesel?")
         }
-        .navigationTitle("VIN is Diesel?")
+        
     }
 
-    private func addItem() {
+    private func addItem(year: String, model: String, make: String, fuel: String) {
         withAnimation {
             let newItem = Car(context: viewContext)
             newItem.timestamp = Date()
-            newItem.make = "Tap to add a new car..."
+            newItem.year = year
+            newItem.model = model
+            newItem.make = make
+            newItem.fuel = fuel
+            
             do {
                 try viewContext.save()
             } catch {
@@ -88,18 +79,7 @@ struct ContentView: View {
         }
     }
 
-    func vinLookup(_ vin: String) async {
-        let client = VINdicator()
-        do {
-            let car = try await client.lookupVin(vin)
-            year = car.year
-            make = car.make
-            model = car.model
-            try viewContext.save()
-        } catch {
-            Logger().log("Error: \(error.localizedDescription)")
-        }
-    }
+
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {

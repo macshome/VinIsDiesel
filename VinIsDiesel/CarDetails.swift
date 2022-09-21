@@ -8,30 +8,41 @@
 import SwiftUI
 import OSLog
 import VINdicator
-import CoreData
 
 struct CarDetails: View {
-    @Environment(\.managedObjectContext) private var viewContext
 
     @State var year = ""
     @State var make = ""
     @State var model = ""
     @State var vin = ""
+    @State var fuel = ""
 
+    let onComplete: (String, String, String, String) -> Void
+    
     var body: some View {
-        Form {
-            TextField("VIN", text: $vin)
-                .onSubmit {
-                    Task {
-                    await vinLookup(vin)
+        NavigationView {
+            Form {
+                TextField("VIN", text: $vin)
+                    .onSubmit {
+                        Task {
+                            await vinLookup(vin)
+                        }
+                    }
+                TextField("Year", text: $year)
+                    .disabled(true)
+                TextField("Make", text: $make)
+                    .disabled(true)
+                TextField("Model", text: $model)
+                    .disabled(true)
+                TextField("Fuel", text: $fuel)
+                    .disabled(true)
+                Section {
+                    Button(action: addCarAction) {
+                        Text("Add Car")
                     }
                 }
-            TextField("Year", text: $year)
-                .disabled(true)
-            TextField("Make", text: $make)
-                .disabled(true)
-            TextField("Model", text: $model)
-                .disabled(true)
+            }
+            .navigationTitle("Add a VIN")
         }
     }
 
@@ -42,16 +53,13 @@ struct CarDetails: View {
             year = car.year
             make = car.make
             model = car.model
-            try viewContext.save()
+            fuel = car.fuel
         } catch {
             Logger().log("Error: \(error.localizedDescription)")
         }
     }
-}
-
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        CarDetails(year: "2022", make: "Canine", model: "Dingo")
-
+    
+    private func addCarAction() {
+        onComplete(year, make, model, fuel)
     }
 }

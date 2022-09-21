@@ -14,6 +14,7 @@
 		9CA6E0ED28DB4BD600A0BA4B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */; };
 		9CA6E0F028DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */; };
 		9CF3F0D428DB6DEC007D217D /* VINdicator in Frameworks */ = {isa = PBXBuildFile; productRef = 9CF3F0D328DB6DEC007D217D /* VINdicator */; };
+		9CF3F0D628DB7A7B007D217D /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3F0D528DB7A7B007D217D /* CarDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9CA6E0EA28DB4BD600A0BA4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9CA6E0EF28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VinIsDiesel.xcdatamodel; sourceTree = "<group>"; };
+		9CF3F0D528DB7A7B007D217D /* CarDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */,
 				9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */,
+				9CF3F0D528DB7A7B007D217D /* CarDetails.swift */,
 				9CA6E0E728DB4BD600A0BA4B /* Assets.xcassets */,
 				9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */,
 				9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA6E0ED28DB4BD600A0BA4B /* Persistence.swift in Sources */,
+				9CF3F0D628DB7A7B007D217D /* CarDetails.swift in Sources */,
 				9CA6E0E628DB4BD400A0BA4B /* ContentView.swift in Sources */,
 				9CA6E0E428DB4BD400A0BA4B /* VinIsDieselApp.swift in Sources */,
 				9CA6E0F028DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld in Sources */,

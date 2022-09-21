@@ -15,7 +15,7 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
             let newItem = Car(context: viewContext)
-            newItem.uuid = UUID()
+            newItem.timestamp = Date()
 
         }
         do {

@@ -4,7 +4,7 @@
         <attribute name="fuel" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="make" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="model" optional="YES" attributeType="String" defaultValueString=""/>
-        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="vin" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="year" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>

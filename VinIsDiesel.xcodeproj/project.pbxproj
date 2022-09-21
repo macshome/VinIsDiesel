@@ -13,7 +13,7 @@
 		9CA6E0EB28DB4BD600A0BA4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA6E0EA28DB4BD600A0BA4B /* Preview Assets.xcassets */; };
 		9CA6E0ED28DB4BD600A0BA4B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */; };
 		9CA6E0F028DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */; };
-		9CF3F0D128DB6AEE007D217D /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3F0D028DB6AEE007D217D /* CarDetails.swift */; };
+		9CF3F0D428DB6DEC007D217D /* VINdicator in Frameworks */ = {isa = PBXBuildFile; productRef = 9CF3F0D328DB6DEC007D217D /* VINdicator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,6 @@
 		9CA6E0EA28DB4BD600A0BA4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9CA6E0EF28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VinIsDiesel.xcdatamodel; sourceTree = "<group>"; };
-		9CF3F0D028DB6AEE007D217D /* CarDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF3F0D428DB6DEC007D217D /* VINdicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,6 @@
 			children = (
 				9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */,
 				9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */,
-				9CF3F0D028DB6AEE007D217D /* CarDetails.swift */,
 				9CA6E0E728DB4BD600A0BA4B /* Assets.xcassets */,
 				9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */,
 				9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */,
@@ -92,6 +91,9 @@
 			dependencies = (
 			);
 			name = VinIsDiesel;
+			packageProductDependencies = (
+				9CF3F0D328DB6DEC007D217D /* VINdicator */,
+			);
 			productName = VinIsDiesel;
 			productReference = 9CA6E0E028DB4BD400A0BA4B /* VinIsDiesel.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 9CA6E0D728DB4BD400A0BA4B;
+			packageReferences = (
+				9CF3F0D228DB6DEC007D217D /* XCRemoteSwiftPackageReference "VINdicator" */,
+			);
 			productRefGroup = 9CA6E0E128DB4BD400A0BA4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,7 +155,6 @@
 				9CA6E0E628DB4BD400A0BA4B /* ContentView.swift in Sources */,
 				9CA6E0E428DB4BD400A0BA4B /* VinIsDieselApp.swift in Sources */,
 				9CA6E0F028DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld in Sources */,
-				9CF3F0D128DB6AEE007D217D /* CarDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9CF3F0D228DB6DEC007D217D /* XCRemoteSwiftPackageReference "VINdicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/macshome/VINdicator";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9CF3F0D328DB6DEC007D217D /* VINdicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CF3F0D228DB6DEC007D217D /* XCRemoteSwiftPackageReference "VINdicator" */;
+			productName = VINdicator;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */ = {

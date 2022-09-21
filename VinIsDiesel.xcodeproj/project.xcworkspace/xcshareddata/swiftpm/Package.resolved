@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "vindicator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/macshome/VINdicator",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7a7d95327e7690b321105f55beeb80c6ba3c185d"
+      }
+    }
+  ],
+  "version" : 2
+}

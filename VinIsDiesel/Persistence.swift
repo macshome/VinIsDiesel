@@ -17,6 +17,9 @@ struct PersistenceController {
             let newItem = Car(context: viewContext)
             newItem.timestamp = Date()
             newItem.make = "Doggo"
+            newItem.year = "1956"
+            newItem.model = "Barker"
+            newItem.fuel = "Gasoline"
 
         }
         do {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C399D1428DC959F0074A2BA /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 9C399D1328DC959F0074A2BA /* CodeScanner */; };
 		9C5270DD28DBB92300DCE3D7 /* CarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5270DC28DBB92300DCE3D7 /* CarRow.swift */; };
 		9CA6E0E428DB4BD400A0BA4B /* VinIsDieselApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */; };
 		9CA6E0E628DB4BD400A0BA4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C399D1428DC959F0074A2BA /* CodeScanner in Frameworks */,
 				9CF3F0D428DB6DEC007D217D /* VINdicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +101,7 @@
 			name = VinIsDiesel;
 			packageProductDependencies = (
 				9CF3F0D328DB6DEC007D217D /* VINdicator */,
+				9C399D1328DC959F0074A2BA /* CodeScanner */,
 			);
 			productName = VinIsDiesel;
 			productReference = 9CA6E0E028DB4BD400A0BA4B /* VinIsDiesel.app */;
@@ -130,6 +133,7 @@
 			mainGroup = 9CA6E0D728DB4BD400A0BA4B;
 			packageReferences = (
 				9CF3F0D228DB6DEC007D217D /* XCRemoteSwiftPackageReference "VINdicator" */,
+				9C399D1228DC959F0074A2BA /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 9CA6E0E128DB4BD400A0BA4B /* Products */;
 			projectDirPath = "";
@@ -294,6 +298,7 @@
 				DEVELOPMENT_TEAM = WPM3555LTQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera use is required to scan VIN codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -323,6 +328,7 @@
 				DEVELOPMENT_TEAM = WPM3555LTQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera use is required to scan VIN codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -365,6 +371,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9C399D1228DC959F0074A2BA /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		9CF3F0D228DB6DEC007D217D /* XCRemoteSwiftPackageReference "VINdicator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/macshome/VINdicator";
@@ -376,6 +390,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9C399D1328DC959F0074A2BA /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C399D1228DC959F0074A2BA /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		9CF3F0D328DB6DEC007D217D /* VINdicator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9CF3F0D228DB6DEC007D217D /* XCRemoteSwiftPackageReference "VINdicator" */;

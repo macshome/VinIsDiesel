@@ -8,6 +8,7 @@
 import SwiftUI
 import OSLog
 import VINdicator
+import CodeScanner
 
 struct CarDetails: View {
 
@@ -17,17 +18,28 @@ struct CarDetails: View {
     @State var vin = ""
     @State var fuel = ""
 
+    @State private var isShowingScanner = false
+
     let onComplete: (String, String, String, String) -> Void
     
     var body: some View {
         NavigationView {
             Form {
-                TextField("VIN", text: $vin)
-                    .onSubmit {
-                        Task {
-                            await vinLookup(vin)
+                HStack {
+                    TextField("VIN", text: $vin)
+                        .onSubmit {
+                            Task {
+                                await vinLookup(vin)
+                            }
                         }
+                    Button {
+                        isShowingScanner = true
+                    } label: {
+                        Label("", systemImage: "camera")
+                            .labelStyle(.iconOnly)
                     }
+                }
+
                 TextField("Year", text: $year)
                     .disabled(true)
                 TextField("Make", text: $make)
@@ -44,9 +56,14 @@ struct CarDetails: View {
             }
             .navigationTitle("Add a VIN")
         }
+        .sheet(isPresented: $isShowingScanner) {
+            CodeScannerView(codeTypes: [.code39],
+                            simulatedData: "3FADP4BJ2FM195587",
+                            completion: handleScan)
+        }
     }
 
-    func vinLookup(_ vin: String) async {
+    private func vinLookup(_ vin: String) async {
         let client = VINdicator()
         do {
             let car = try await client.lookupVin(vin)
@@ -61,5 +78,21 @@ struct CarDetails: View {
     
     private func addCarAction() {
         onComplete(year, make, model, fuel)
+    }
+
+    private func handleScan(result: Result<ScanResult, ScanError>) {
+        isShowingScanner = false
+        switch result {
+        case .success(let result):
+            vin = result.string
+        case .failure(let error):
+            Logger().log(level: .error, "Scanning failed: \(error.localizedDescription)")
+        }
+    }
+
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            CarDetails(year: "1975", make: "Ford", model: "Grenade", vin: "", fuel: "Gasoline") { _,_,_,_ in }
+        }
     }
 }

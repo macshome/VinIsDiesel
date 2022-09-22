@@ -18,7 +18,10 @@ struct ContentView: View {
         animation: .default)
     
     private var items: FetchedResults<Car>
+
     @State var isPresented = false
+
+    @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = true
     
     var body: some View {
         NavigationView {
@@ -45,6 +48,9 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("VIN is Diesel?")
+        }
+        .sheet(isPresented: $needsAppOnboarding) {
+            OnboardingView()
         }
         
     }

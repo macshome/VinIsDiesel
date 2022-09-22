@@ -29,9 +29,6 @@ struct CarDetails: View {
                     TextField("VIN", text: $vin)
                         .onSubmit {
                             vinLookup(vin)
-//                            Task {
-//                            await vinLookup(vin)
-//                            }
                         }
                     Button {
                         isShowingScanner = true

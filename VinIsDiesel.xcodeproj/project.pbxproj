@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C399D1428DC959F0074A2BA /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 9C399D1328DC959F0074A2BA /* CodeScanner */; };
+		9C46C71C28DCBA6600ED0AA8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C46C71B28DCBA6600ED0AA8 /* OnboardingView.swift */; };
 		9C5270DD28DBB92300DCE3D7 /* CarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5270DC28DBB92300DCE3D7 /* CarRow.swift */; };
 		9CA6E0E428DB4BD400A0BA4B /* VinIsDieselApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */; };
 		9CA6E0E628DB4BD400A0BA4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C46C71B28DCBA6600ED0AA8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		9C5270DC28DBB92300DCE3D7 /* CarRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRow.swift; sourceTree = "<group>"; };
 		9CA6E0E028DB4BD400A0BA4B /* VinIsDiesel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinIsDiesel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinIsDieselApp.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */,
 				9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */,
+				9C46C71B28DCBA6600ED0AA8 /* OnboardingView.swift */,
 				9C5270DC28DBB92300DCE3D7 /* CarRow.swift */,
 				9CF3F0D528DB7A7B007D217D /* CarDetails.swift */,
 				9CA6E0E728DB4BD600A0BA4B /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 				9C5270DD28DBB92300DCE3D7 /* CarRow.swift in Sources */,
 				9CA6E0E428DB4BD400A0BA4B /* VinIsDieselApp.swift in Sources */,
 				9CA6E0F028DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld in Sources */,
+				9C46C71C28DCBA6600ED0AA8 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

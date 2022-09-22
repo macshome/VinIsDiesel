@@ -29,7 +29,7 @@ struct CarDetails: View {
                     TextField("VIN", text: $vin)
                         .onSubmit {
                             Task {
-                                await vinLookup(vin)
+                            await vinLookup(vin)
                             }
                         }
                     Button {

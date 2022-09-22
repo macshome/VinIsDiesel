@@ -46,6 +46,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C46C71D28DCC73600ED0AA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CA6E0E728DB4BD600A0BA4B /* Assets.xcassets */,
+				9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */,
+				9C46C71B28DCBA6600ED0AA8 /* OnboardingView.swift */,
+				9C5270DC28DBB92300DCE3D7 /* CarRow.swift */,
+				9CF3F0D528DB7A7B007D217D /* CarDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C46C71E28DCC74100ED0AA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */,
+				9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9CA6E0D728DB4BD400A0BA4B = {
 			isa = PBXGroup;
 			children = (
@@ -66,13 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				9CA6E0E328DB4BD400A0BA4B /* VinIsDieselApp.swift */,
-				9CA6E0E528DB4BD400A0BA4B /* ContentView.swift */,
-				9C46C71B28DCBA6600ED0AA8 /* OnboardingView.swift */,
-				9C5270DC28DBB92300DCE3D7 /* CarRow.swift */,
-				9CF3F0D528DB7A7B007D217D /* CarDetails.swift */,
-				9CA6E0E728DB4BD600A0BA4B /* Assets.xcassets */,
-				9CA6E0EC28DB4BD600A0BA4B /* Persistence.swift */,
-				9CA6E0EE28DB4BD600A0BA4B /* VinIsDiesel.xcdatamodeld */,
+				9C46C71D28DCC73600ED0AA8 /* Views */,
+				9C46C71E28DCC74100ED0AA8 /* Model */,
 				9CA6E0E928DB4BD600A0BA4B /* Preview Content */,
 			);
 			path = VinIsDiesel;

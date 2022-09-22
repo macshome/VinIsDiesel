@@ -28,9 +28,10 @@ struct CarDetails: View {
                 HStack {
                     TextField("VIN", text: $vin)
                         .onSubmit {
-                            Task {
-                            await vinLookup(vin)
-                            }
+                            vinLookup(vin)
+//                            Task {
+//                            await vinLookup(vin)
+//                            }
                         }
                     Button {
                         isShowingScanner = true
@@ -63,16 +64,18 @@ struct CarDetails: View {
         }
     }
 
-    private func vinLookup(_ vin: String) async {
+    private func vinLookup(_ vin: String) {
         let client = VINdicator()
-        do {
-            let car = try await client.lookupVin(vin)
-            year = car.year
-            make = car.make
-            model = car.model
-            fuel = car.fuel
-        } catch {
-            Logger().log("Error: \(error.localizedDescription)")
+            Task {
+                do {
+                let car = try await client.lookupVin(vin)
+                year = car.year
+                make = car.make
+                model = car.model
+                fuel = car.fuel
+            } catch {
+                Logger().log("Error: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -85,6 +88,7 @@ struct CarDetails: View {
         switch result {
         case .success(let result):
             vin = result.string
+            vinLookup(vin)
         case .failure(let error):
             Logger().log(level: .error, "Scanning failed: \(error.localizedDescription)")
         }
